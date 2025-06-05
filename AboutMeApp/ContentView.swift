@@ -21,20 +21,22 @@ struct ContentView: View {
                 .font(.title)
                 .fontWeight(.regular)
                 .foregroundColor(Color.black)
-            HStack {
-                Text("Family")
-                    .font(.title)
-                    .fontWeight(.regular)
-                    .foregroundColor(Color.black)
-                    .multilineTextAlignment(.leading)
-                    .padding(.bottom, 400.0)
-                Spacer()
-                Image("")
-            }
-        }
-        .padding()
-    }
-}
+            NavigationStack {
+                VStack {
+                    NavigationLink(destination: family()) {
+                        Text("family link!")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .padding(.bottom, 270.0)
+                    }// end navigation link1
+                }// end vstack
+                .navigationTitle("home page")
+                .navigationBarTitleDisplayMode(/*@START_MENU_TOKEN@*/.inline/*@END_MENU_TOKEN@*/)
+                .navigationBarHidden(true)
+            }// end navigation stack
+                }//end hstack
+            }// end vstack
+        }//end body
 
 #Preview {
     ContentView()
